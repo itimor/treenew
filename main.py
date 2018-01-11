@@ -15,6 +15,6 @@ for m_match_id in m_match_ids:
 
     portfolio = portfoliomodel.best_portfolio(m_match)
 
-    m_match.display()
+    # m_match.display()
     portfolio.display()
     time.sleep(4)

@@ -9,15 +9,9 @@ import datetime
 import requests
 
 
-def url_get(url_str, decode):
-    r = requests.get(url_str)
-    return r.content.decode(decode, "ignore").encode('utf-8')
-
-
 def crawl_match_info(match_id):
     url_str = "http://odds.500.com/fenxi/ouzhi-" + str(match_id) + ".shtml"
-    print url_str
-    content = url_get(url_str, "gb2312")
+    content = requests.get(url_str).text
     #print content
 
     match = lottery.LotteryMatch("match_name", "match_link",  "match_time", "host_team", "guest_team", "item_arr")
@@ -45,7 +39,7 @@ def crawl_match_info(match_id):
 def crawl_lottery_items(match_id):
 
     url_str = "http://odds.500.com/fenxi1/ouzhi.php?id=" + str(match_id) + "&ctype=1&start="+str(1)+"&r=1&style=0&last=1&guojia=0&chupan=0"
-    content = url_get(url_str, "utf-8")
+    content = requests.get(url_str).text
 
     item_r = re.compile(r'(xls="row"[\s\S]*?)<tr class="tr\d"')
 
@@ -113,7 +107,7 @@ def crawl_match_list():
 def crawl_match_list_by_date(date):
 
     url_str = "http://trade.500.com/jczq/dgp.php?date="+ date +"&playtype=both"
-    content = url_get(url_str, "gb2312")
+    content = requests.get(url_str).text
     match_id_r = re.compile(r'http://odds.500.com/fenxi/ouzhi-(\d+).shtml')
 
     match_ids = []

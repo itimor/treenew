@@ -22,7 +22,7 @@ company_map = {}
 
 for match_id in match_all_ids:
     seq += 1
-    print seq, match_id
+    print(seq, match_id)
 
     match = spider.get_match(match_id)
 
