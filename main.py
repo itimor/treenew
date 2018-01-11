@@ -10,11 +10,8 @@ import time
 m_match_ids = spider.crawl_match_list()
 
 for m_match_id in m_match_ids:
-    print(m_match_id)
     m_match = spider.get_match(m_match_id)
-
     portfolio = portfoliomodel.best_portfolio(m_match)
-
     # m_match.display()
-    portfolio.display()
+    portfolio.display(102)
     time.sleep(4)
