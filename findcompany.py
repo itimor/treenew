@@ -47,7 +47,7 @@ companies.sort(lambda x, y: cmp(x.back_ratio, y.back_ratio))
 seq = 0
 for company in companies:
     seq += 1
-    print seq, company.id, company.company, company.back_ratio
+    print(seq, company.id, company.company, company.back_ratio)
 
 
 

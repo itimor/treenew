@@ -101,7 +101,8 @@ def get_match(match_id):
 def crawl_match_list():
 
     today = datetime.datetime.now()
-    return crawl_match_list_by_date(str(today.year) + "-" + str(today.month) + "-" + str(today.day))
+    date = '{}-{}-{}'.format(today.year,today.month,today.day)
+    return crawl_match_list_by_date(date)
 
 
 def crawl_match_list_by_date(date):
