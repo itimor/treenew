@@ -55,7 +55,7 @@ def crawl_lottery_items(match_id):
 
         item_seq += 1
         lottery_item = lottery.LotteryItem()
-        lottery_item.id = item_seq
+        lottery_item.tid = item_seq
 
         one_item = m.group(1)
         company_pattern = re.compile(r'class="tb_plgs" title="(.*?)"')
