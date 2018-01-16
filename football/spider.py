@@ -3,10 +3,12 @@
 
 """ lottery item class """
 
-import re
-import lottery
 import datetime
+import re
 import requests
+
+import lottery
+
 
 def url_get(url_str):
     html = requests.get(url_str)
@@ -18,7 +20,7 @@ def crawl_match_info(match_id):
     print(url_str)
     content = url_get(url_str)
 
-    match = lottery.LotteryMatch("match_name", "match_link",  "match_time", "host_team", "guest_team", "item_arr")
+    match = lottery.LotteryMatch("match_name", "match_link", "match_time", "host_team", "guest_team", "item_arr")
 
     match_info_r = re.compile(r'<a class="hd_name"[\s\S]*?>([\s\S]*?)<')
 
@@ -55,7 +57,7 @@ def crawl_lottery_items(match_id):
 
         item_seq += 1
         lottery_item = lottery.LotteryItem()
-        lottery_item.tid = item_seq
+        lottery_item.id = item_seq
 
         one_item = m.group(1)
         company_pattern = re.compile(r'class="tb_plgs" title="(.*?)"')

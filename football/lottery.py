@@ -8,7 +8,7 @@ class LotteryItem(object):
 
     def __init__(self):
         self.company = ""
-        self.tid = 0
+        self.id = 0
         self.w_odds = float(0)
         self.d_odds = float(0)
         self.l_odds = float(0)
@@ -19,7 +19,7 @@ class LotteryItem(object):
         self.count = 1
 
     def display(self):
-        print("%s\t%s\t%s\t%s\t%s\t" % (self.tid, self.company, self.cw_odds, self.cd_odds, self.cl_odds))
+        print("%s\t%s\t%s\t%s\t%s\t" % (self.id, self.company, self.cw_odds, self.cd_odds, self.cl_odds))
 
 
 class LotteryMatch(object):
@@ -61,6 +61,6 @@ class LotteryPortfolio(object):
         if self.profit> threshold:
             print("profit:\t%s\nwin:\t%s %s\t%s\t%s\ndraw:\t%s %s\t%s\t%s\nlose:\t%s %s\t%s\t%s" % \
               (self.profit,
-               self.win_item.tid, self.win_item.company, self.win_item.cw_odds, self.win_percentage,
-               self.draw_item.tid, self.draw_item.company, self.draw_item.cd_odds, self.draw_percentage,
-               self.lose_item.tid, self.lose_item.company, self.lose_item.cl_odds, self.lose_percentage))
+               self.win_item.id, self.win_item.company, self.win_item.cw_odds, self.win_percentage,
+               self.draw_item.id, self.draw_item.company, self.draw_item.cd_odds, self.draw_percentage,
+               self.lose_item.id, self.lose_item.company, self.lose_item.cl_odds, self.lose_percentage))

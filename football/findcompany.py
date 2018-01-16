@@ -3,8 +3,9 @@
 
 """ find best return rate company """
 
-import spider
 import time
+
+import spider
 
 match_all_ids = []
 

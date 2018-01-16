@@ -3,9 +3,10 @@
 
 """ soccer bet main function file """
 
+import time
+
 import spider
 import portfoliomodel
-import time
 
 m_match_ids = spider.crawl_match_list()
 
