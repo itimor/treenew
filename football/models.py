@@ -4,7 +4,9 @@
 from django.db import models
 
 
-class duqiu(models.Model):
+class Duqiu(models.Model):
+    name = models.CharField(max_length=5, verbose_name=u'名称')
+
     profit = models.CharField(max_length=5, verbose_name=u'最低毛利率')
 
     win_item_id = models.CharField(max_length=5, verbose_name=u'win公司id')
@@ -21,3 +23,11 @@ class duqiu(models.Model):
     lose_item_company = models.CharField(max_length=20, verbose_name=u'lose公司')
     lose_item_cw_odds = models.CharField(max_length=5, verbose_name=u'lose赔率')
     lose_percentage = models.CharField(max_length=5, verbose_name=u'lose资金占比')
+
+    class Meta:
+        verbose_name = u"足球赌球"
+        verbose_name_plural = u"足球赌球"
+
+    def save(self, *args, **kwargs):
+        self.name = '{}-{}-{}'.format(self.win_item_company, self.draw_item_company, self.lose_item_company)
+        super(Duqiu, self).save(*args, **kwargs)
