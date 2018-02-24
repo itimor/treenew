@@ -56,9 +56,9 @@ class LotteryPortfolio(object):
         self.draw_percentage = 0
         self.lose_percentage = 0
 
-    def display(self,threshold):
+    def display(self, threshold):
 
-        if self.profit> threshold:
+        if self.profit > threshold:
             print("profit:\t%s\nwin:\t%s %s\t%s\t%s\ndraw:\t%s %s\t%s\t%s\nlose:\t%s %s\t%s\t%s" % \
               (self.profit,
                self.win_item.id, self.win_item.company, self.win_item.cw_odds, self.win_percentage,

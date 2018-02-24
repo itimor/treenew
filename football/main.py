@@ -14,5 +14,5 @@ for m_match_id in m_match_ids:
     m_match = spider.get_match(m_match_id)
     portfolio = portfoliomodel.best_portfolio(m_match)
     # m_match.display()
-    portfolio.display(102)
+    portfolio.display(110)
     time.sleep(4)
